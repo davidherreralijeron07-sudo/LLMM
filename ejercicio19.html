@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 19 - Imágenes flotantes</title>
+  <style>
+    .float-left { float: left; margin: 0 10px 10px 0; }
+    .float-right { float: right; margin: 0 0 10px 10px; }
+    .clearfix { clear: both; }
+    body { font-family: Arial, sans-serif; padding: 12px; }
+  </style>
+</head>
+<body>
+
+  <!-- Imagen flotante izquierda -->
+  <img src="Fotos/Piña.jpg" class="float-left" alt="Piña">
+  <p>
+    Este es un párrafo acompañado por una imagen alineada a la izquierda usando el atributo
+    <code>align="left"</code>. El texto rodeará automáticamente la imagen.  
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam fermentum diam vel
+    quam commodo, non sagittis lectus pretium. Sed suscipit ultrices hendrerit.
+  </p>
+
+  <div class="clearfix"></div>
+
+  <!-- Imagen flotante derecha -->
+  <img src="Fotos/Piña.jpg" class="float-right" alt="Piña">
+  <p>
+    Este es un párrafo acompañado por una imagen alineada a la derecha usando
+    <code>align="right"</code>. El texto se ajustará por la izquierda.  
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae neque sed
+    lorem blandit tempus. Nulla facilisi. Integer feugiat elit at ex dapibus vehicula.
+  </p>
+
+  <div class="clearfix"></div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rellena tu CV</title>
+</head>
+<body>
+
+<h2>Rellena tu CV</h2>
+
+<form action="procesar.php" method="POST" enctype="multipart/form-data">
+
+    <label for="nombre">Nombre</label><br>
+    <input type="text" id="nombre" name="nombre" maxlength="30" placeholder="Nombre" required><br><br>
+
+    <label for="apellidos">Apellidos</label><br>
+    <input type="text" id="apellidos" name="apellidos" maxlength="80" size="50" placeholder="Apellidos" required><br><br>
+
+    <label for="pass">Contraseña</label><br>
+    <input type="password" id="pass" name="pass" minlength="6" maxlength="10" placeholder="Mínimo 6 caracteres" required><br><br>
+
+    <label for="dni">DNI</label><br>
+    <input type="text" id="dni" name="dni" size="15" placeholder="12345678A" required><br><br>
+
+    <fieldset>
+        <legend>Sexo</legend>
+        <input type="radio" id="hombre" name="sexo" value="hombre">
+        <label for="hombre">Hombre</label><br>
+
+        <input type="radio" id="mujer" name="sexo" value="mujer">
+        <label for="mujer">Mujer</label>
+    </fieldset>
+    <br>
+
+    <label for="foto">Incluir mi foto</label><br>
+    <input type="file" id="foto" name="foto" accept="image/*"><br><br>
+
+    <input type="checkbox" id="boletin" name="boletin" checked>
+    <label for="boletin">Suscribirme al boletín de novedades</label><br><br>
+
+    <input type="submit" value="Guardar cambios">
+    <input type="reset" value="Borrar los datos introducidos">
+
+</form>
+
+</body>
+</html>
