@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.E.S. LA MARISMA - Quiz XML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="quiz-card">
+        <header>
+            <div class="logo-area">
+                <h2>I.E.S. LA MARISMA</h2>
+                <p id="ui-subtitle">Proyecto XML y AJAX</p>
+            </div>
+            <div class="lang-selector">
+                <button onclick="changeLanguage('es')">ES</button>
+                <button onclick="changeLanguage('en')">EN</button>
+            </div>
+        </header>
+
+        <div id="stats-bar">
+            <div class="stat">
+                <span id="ui-timer-label">Tiempo:</span> <b id="timer">0</b>s
+            </div>
+            <div class="stat">
+                <span id="ui-score-label">Puntos:</span> <b id="score">0</b>
+            </div>
+        </div>
+
+        <main id="quiz-body">
+            <div id="content">
+                <!-- El contenido se genera dinámicamente -->
+                <h1 id="ui-welcome">Bienvenido al Concurso</h1>
+                <p id="ui-instruction">Selecciona un idioma para comenzar la prueba.</p>
+            </div>
+        </main>
+
+        <footer>
+            <button id="btn-next" onclick="nextQuestion()" style="display:none;">Siguiente</button>
+        </footer>
+    </div>
+
+    <script>
+        // Variables de estado
+        let currentIdx = 0;
+        let score = 0;
+        let seconds = 0;
+        let timerInterval;
+        let xmlDoc;
+        let questions = [];
+        let currentLang = 'es';
+
+        // Diccionario para bilingüismo de la interfaz
+        const i18n = {
+            es: {
+                subtitle: "Proyecto XML y AJAX",
+                timer: "Tiempo:",
+                score: "Puntos:",
+                next: "Siguiente",
+                welcome: "Bienvenido al Concurso",
+                instruction: "Selecciona un idioma para comenzar.",
+                finish: "¡Prueba Finalizada!",
+                finalScore: "Tu puntuación total es:"
+            },
+            en: {
+                subtitle: "XML & AJAX Project",
+                timer: "Time:",
+                score: "Score:",
+                next: "Next",
+                welcome: "Welcome to the Quiz",
+                instruction: "Select a language to start.",
+                finish: "Quiz Finished!",
+                finalScore: "Your total score is:"
+            }
+        };
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            updateUI();
+            loadXML(lang);
+        }
+
+        function updateUI() {
+            document.getElementById('ui-subtitle').innerText = i18n[currentLang].subtitle;
+            document.getElementById('ui-timer-label').innerText = i18n[currentLang].timer;
+            document.getElementById('ui-score-label').innerText = i18n[currentLang].score;
+            document.getElementById('btn-next').innerText = i18n[currentLang].next;
+        }
+
+        // Carga de XML mediante AJAX
+        function loadXML(lang) {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    xmlDoc = this.responseXML;
+                    questions = xmlDoc.getElementsByTagName("question");
+                    startQuiz();
+                }
+            };
+            xhr.open("GET", `preguntas_${lang}.xml`);
+            xhr.send();
+        }
+
+        function startQuiz() {
+            currentIdx = 0;
+            score = 0;
+            seconds = 0;
+            document.getElementById('score').innerText = "0";
+            document.getElementById('btn-next').style.display = 'block';
+            
+            // Iniciar Reloj
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                seconds++;
+                document.getElementById('timer').innerText = seconds;
+            }, 1000);
+            
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentIdx >= questions.length) {
+                endQuiz();
+                return;
+            }
+
+            let q = questions[currentIdx];
+            let wording = q.getElementsByTagName("wording")[0].textContent;
+            let choices = q.getElementsByTagName("choices")[0].getElementsByTagName("choice");
+
+            let html = `<div class="question-box">
+                            <p class="question-id">Pregunta ${currentIdx + 1}/20</p>
+                            <h3>${wording}</h3>
+                            <div class="options-grid">`;
+            
+            for (let i = 0; i < choices.length; i++) {
+                let isCorrect = choices[i].getAttribute("correct") === "yes";
+                html += `<button class="opt-btn" onclick="checkAnswer(${isCorrect}, this)">
+                            ${choices[i].textContent}
+                         </button>`;
+            }
+            html += `</div></div>`;
+            document.getElementById("content").innerHTML = html;
+        }
+
+        function checkAnswer(isCorrect, btn) {
+            // Deshabilitar botones para evitar múltiples clics
+            const btns = document.querySelectorAll('.opt-btn');
+            btns.forEach(b => b.disabled = true);
+
+            if (isCorrect) {
+                score++;
+                btn.classList.add('correct');
+            } else {
+                btn.classList.add('wrong');
+            }
+            document.getElementById('score').innerText = score;
+        }
+
+        function nextQuestion() {
+            currentIdx++;
+            showQuestion();
+        }
+
+        function endQuiz() {
+            clearInterval(timerInterval);
+            document.getElementById("content").innerHTML = `
+                <div class="result-screen">
+                    <h2>${i18n[currentLang].finish}</h2>
+                    <p>${i18n[currentLang].finalScore} <strong>${score} / ${questions.length}</strong></p>
+                    <p>${i18n[currentLang].timer} ${seconds}s</p>
+                </div>
+            `;
+            document.getElementById('btn-next').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

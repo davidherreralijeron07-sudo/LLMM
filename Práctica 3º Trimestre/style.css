@@ -1,0 +1,101 @@
+:root {
+    --primary: #005a9c; /* Azul corporativo Junta de Andalucía */
+    --accent: #00a650;
+    --error: #d93025;
+    --bg: #f0f2f5;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.quiz-card {
+    background: #fff;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    border-top: 5px solid var(--primary);
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fafafa;
+}
+
+.lang-selector button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+#stats-bar {
+    display: flex;
+    justify-content: space-around;
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+}
+
+#quiz-body {
+    padding: 30px;
+    min-height: 300px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.opt-btn {
+    padding: 15px;
+    border: 2px solid #eee;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 1rem;
+}
+
+.opt-btn:hover:not(:disabled) {
+    border-color: var(--primary);
+    background: #f0f7ff;
+}
+
+.opt-btn.correct {
+    background-color: var(--accent) !important;
+    color: white;
+    border-color: var(--accent);
+}
+
+.opt-btn.wrong {
+    background-color: var(--error) !important;
+    color: white;
+    border-color: var(--error);
+}
+
+#btn-next {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
