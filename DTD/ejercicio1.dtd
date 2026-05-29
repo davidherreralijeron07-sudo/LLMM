@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cfgs [
+    <!ELEMENT cfgs (modulo+)>
+    <!ATTLIST cfgs nombre CDATA #REQUIRED>
+    
+    <!ELEMENT modulo (nombre, descripcion, codigo, profesor, fechas)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT codigo (#PCDATA)>
+    <!ELEMENT profesor (#PCDATA)>
+    
+    <!ELEMENT fechas (inicio, fin)>
+    <!ELEMENT inicio (dia, mes, ano)>
+    <!ELEMENT fin (dia, mes, ano)>
+    
+    <!ELEMENT dia (#PCDATA)>
+    <!ELEMENT mes (#PCDATA)>
+    <!ELEMENT ano (#PCDATA)>
+]>
+
+<cfgs nombre="Desarrollo de Aplicaciones Web">
+    <modulo>
+        <nombre>Desarrollo Web en Entorno Servidor</nombre>
+        <descripcion>Programación backend utilizando lenguajes de servidor y bases de datos.</descripcion>
+        <codigo>DAW_DWES</codigo>
+        <profesor>María López</profesor>
+        <fechas>
+            <inicio>
+                <dia>15</dia>
+                <mes>09</mes>
+                <ano>2025</ano>
+            </inicio>
+            <fin>
+                <dia>22</dia>
+                <mes>06</mes>
+                <ano>2026</ano>
+            </fin>
+        </fechas>
+    </modulo>
+</cfgs>

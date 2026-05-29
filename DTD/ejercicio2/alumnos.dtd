@@ -1,0 +1,36 @@
+<!-- Elemento raíz que contiene una lista de alumnos -->
+<!ELEMENT alumnos (alumno+)>
+
+<!-- Estructura del alumno con sus condicionales y opcionalidades -->
+<!ELEMENT alumno (nombre, apellidos, domicilio, telefono+, equipo?, aficion*, (provincia | pais), comentarios?, (evaluacion, calificacion)+)>
+
+<!-- Definición de elementos básicos -->
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT domicilio (#PCDATA)>
+
+<!-- Teléfono con su atributo enumerado obligatorio -->
+<!ELEMENT telefono (#PCDATA)>
+<!ATTLIST telefono tipo (propio | padre | madre | tutor) #REQUIRED>
+
+<!-- Elementos opcionales de equipo y aficiones -->
+<!ELEMENT equipo (#PCDATA)>
+<!ELEMENT aficion (#PCDATA)>
+
+<!-- Origen: Provincia (si es español) o País (si es extranjero) -->
+<!ELEMENT provincia (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+
+<!-- Elemento comentarios definido como ANY -->
+<!ELEMENT comentarios ANY>
+
+<!-- Elementos de notas obligatorios en orden y repetitivos -->
+<!ELEMENT evaluacion (#PCDATA)>
+<!ELEMENT calificacion (#PCDATA)>
+
+<!-- Atributos del elemento Alumno -->
+<!ATTLIST alumno
+    num_alumno ID #REQUIRED
+    altura CDATA #IMPLIED
+    sexo (hombre | mujer) #IMPLIED
+    ayudado_por IDREF #IMPLIED>
