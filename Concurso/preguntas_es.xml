@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE test [
+  <!ELEMENT test (question+)>
+  <!ELEMENT question (wording, choices)>
+  <!ELEMENT wording (#PCDATA)>
+  <!ELEMENT choices (choice+)>
+  <!ELEMENT choice (#PCDATA)>
+  <!ATTLIST question id CDATA #REQUIRED>
+  <!ATTLIST choice correct (yes|no) "no">
+]>
+<test>
+  <question id="1"><wording>¿Qué significa XML?</wording><choices><choice correct="yes">Extensible Markup Language</choice><choice>eXtra Modern Language</choice><choice>Example Markup Language</choice><choice>eXtensible Modern Links</choice></choices></question>
+  <question id="2"><wording>¿Qué define un DTD?</wording><choices><choice>El diseño visual</choice><choice correct="yes">La estructura y reglas de un XML</choice><choice>La conexión a la base de datos</choice><choice>El estilo CSS</choice></choices></question>
+  <question id="3"><wording>¿Qué símbolo indica que un elemento puede aparecer una o más veces en DTD?</wording><choices><choice>?</choice><choice>*</choice><choice correct="yes">+</choice><choice>#</choice></choices></question>
+  <question id="4"><wording>¿Cómo se declara un atributo obligatorio en un DTD?</wording><choices><choice>#IMPLIED</choice><choice>#FIXED</choice><choice correct="yes">#REQUIRED</choice><choice>#MANDATORY</choice></choices></question>
+  <question id="5"><wording>¿Qué es un documento XML 'bien formado'?</wording><choices><choice correct="yes">Aquel que sigue las reglas sintácticas de XML</choice><choice>Aquel que tiene un DTD asociado</choice><choice>Aquel que se ve bien en el navegador</choice><choice>Aquel que no tiene atributos</choice></choices></question>
+  <question id="6"><wording>¿Cuál es la extensión de archivo estándar para los documentos XML?</wording><choices><choice>.html</choice><choice>.txt</choice><choice correct="yes">.xml</choice><choice>.dtd</choice></choices></question>
+  <question id="7"><wording>¿Qué etiqueta se usa para comentarios en XML?</wording><choices><choice>//</choice><choice>/* */</choice><choice correct="yes">&lt;!-- --&gt;</choice><choice>#</choice></choices></question>
+  <question id="8"><wording>¿XML es sensible a mayúsculas y minúsculas?</wording><choices><choice correct="yes">Sí, siempre</choice><choice>No, nunca</choice><choice>Solo en los atributos</choice><choice>Solo en la declaración inicial</choice></choices></question>
+  <question id="9"><wording>¿Qué sección se usa para datos que no deben ser analizados por el procesador XML?</wording><choices><choice>PCDATA</choice><choice correct="yes">CDATA</choice><choice>ELEMENT</choice><choice>ATTLIST</choice></choices></question>
+  <question id="10"><wording>¿Cuál es el elemento raíz en un documento XML?</wording><choices><choice>El primero después del prólogo</choice><choice correct="yes">El único elemento que contiene a todos los demás</choice><choice>Cualquier elemento con ID</choice><choice>No es obligatorio tener uno</choice></choices></question>
+  <question id="11"><wording>¿Qué significa PCDATA?</wording><choices><choice>Parsed Common Data</choice><choice correct="yes">Parsed Character Data</choice><choice>Private Central Data</choice><choice>Primary Code Data</choice></choices></question>
+  <question id="12"><wording>¿Qué carácter se usa para separar elementos en una secuencia en DTD?</wording><choices><choice>|</choice><choice correct="yes">,</choice><choice>;</choice><choice>&amp;</choice></choices></question>
+  <question id="13"><wording>¿Qué indica el asterisco (*) en un elemento DTD?</wording><choices><choice>Aparece exactamente una vez</choice><choice>Aparece una o más veces</choice><choice correct="yes">Aparece cero o más veces</choice><choice>Es un elemento vacío</choice></choices></question>
+  <question id="14"><wording>¿Cómo se referencia un DTD externo?</wording><choices><choice correct="yes">&lt;!DOCTYPE test SYSTEM "file.dtd"&gt;</choice><choice>&lt;link rel="dtd" href="file.dtd"&gt;</choice><choice>&lt;xml-dtd src="file.dtd"&gt;</choice><choice>Usando un @import</choice></choices></question>
+  <question id="15"><wording>¿Cuál de estos es un nombre de etiqueta válido?</wording><choices><choice>&lt;1stElement&gt;</choice><choice>&lt;Element Name&gt;</choice><choice correct="yes">&lt;first_element&gt;</choice><choice>&lt;XML_element&gt;</choice></choices></question>
+  <question id="16"><wording>¿Qué hace AJAX?</wording><choices><choice>Limpia el código XML</choice><choice correct="yes">Intercambia datos con el servidor sin recargar la página</choice><choice>Valida el DTD</choice><choice>Es un lenguaje de marcas</choice></choices></question>
+  <question id="17"><wording>¿Qué objeto JavaScript se usa para AJAX?</wording><choices><choice>XMLDataTransfer</choice><choice>ServerRequest</choice><choice correct="yes">XMLHttpRequest</choice><choice>JSONRequest</choice></choices></question>
+  <question id="18"><wording>¿Qué propiedad de XMLHttpRequest contiene la respuesta en formato XML?</wording><choices><choice>responseText</choice><choice correct="yes">responseXML</choice><choice>xmlData</choice><choice>bodyXML</choice></choices></question>
+  <question id="19"><wording>¿Qué significa que un documento XML sea 'válido'?</wording><choices><choice>Que está bien escrito</choice><choice correct="yes">Que cumple las reglas de su DTD o Esquema</choice><choice>Que se puede abrir en Chrome</choice><choice>Que tiene una licencia</choice></choices></question>
+  <question id="20"><wording>¿Puede un elemento XML tener múltiples atributos con el mismo nombre?</wording><choices><choice>Sí</choice><choice correct="yes">No</choice><choice>Solo si son PCDATA</choice><choice>Solo en versiones antiguas</choice></choices></question>
+</test>
