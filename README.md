@@ -74,16 +74,16 @@
 
 | Tema | Ejercicio| Enlace |
 | ---- | ---------| ------ |
-| 3    |    1     | [Texto de Enlace](DTD/ejercicio1.dtd)      |
-| 3    |    2     | [Texto de Enlace](DTD/ejercicio2.html)     |
-| 3    |    3     | [Texto de Enlace](DTD/ejercicio3.html)     |
-| 3    |    4     | [Texto de Enlace](XSD/cfgs_daw.xsd)        |
-| 3    |    5     | [Texto de Enlace](XSD/tabla_periodica.xsd) |
-| 3    |    6     | [Texto de Enlace](XSLT/xslt1.xml)          |
-| 3    |    7     | [Texto de Enlace](XSLT/xslt2.xml)          |
-| 3    |    8     | [Texto de Enlace](XSLT/xslt3.xml)          |
-| 3    |    9     | [Texto de Enlace](XSLT/xslt4.xml)          |
-| 3    |    10    | [Texto de Enlace](XSLT/xslt5.xml)          |
+| 5    |    1     | [Texto de Enlace](DTD/ejercicio1.dtd)      |
+| 5    |    2     | [Texto de Enlace](DTD/ejercicio2.html)     |
+| 5    |    3     | [Texto de Enlace](DTD/ejercicio3.html)     |
+| 5    |    4     | [Texto de Enlace](XSD/cfgs_daw.xsd)        |
+| 5    |    5     | [Texto de Enlace](XSD/tabla_periodica.xsd) |
+| 5    |    6     | [Texto de Enlace](XSLT/xslt1.xml)          |
+| 5    |    7     | [Texto de Enlace](XSLT/xslt2.xml)          |
+| 5    |    8     | [Texto de Enlace](XSLT/xslt3.xml)          |
+| 5    |    9     | [Texto de Enlace](XSLT/xslt4.xml)          |
+| 5    |    10    | [Texto de Enlace](XSLT/xslt5.xml)          |
 
 
 
