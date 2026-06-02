@@ -99,4 +99,4 @@
 | -------- | ------    | ------ |
 | Práctica | Web4u     | [Texto de Enlace](https://davidherrera07.github.io/LLMM/web4u/index.html)     |
 | Práctica | Boostrap  | [Texto de Enlace](https://davidherrera07.github.io/LLMM/bootstrap/index.html) |
-| Práctica | Concurso  | [Texto de Enlace](http://127.0.0.1:5500/Pr%C3%A1ctica%203%C2%BA%20Trimestre/index.html) |
+| Práctica | Concurso  | [Texto de Enlace]() |
